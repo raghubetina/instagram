@@ -45,7 +45,7 @@ class PostsController < ApplicationController
 
     @post.image = params.fetch("image") if params.key?("image")
     @post.caption = params.fetch("caption")
-    @post.user_id = params.fetch("user_id")
+    
 
     if @post.valid?
       @post.save
