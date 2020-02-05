@@ -4,37 +4,25 @@
 
 <hr>
 
-<!-- Form post start -->
 <form action="/update_post/<%= @post.id %>" method="post" enctype="multipart/form-data">
-<!-- Form post end -->
 
-  <!-- Label and input for image start -->
   <div class="form-group">
     <label for="image">
       Image
     </label>
 
-    <!-- Input for image start -->
     <%= cl_image_tag(@post.image.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="image" name="image" class="form-control">
-    <!-- Input for image end -->
   </div>
-  <!-- Label and input for image end -->
 
-  <!-- Label and input for caption start -->
   <div class="form-group">
     <label for="caption">
       Caption
     </label>
 
-    <!-- Input for caption start -->
     <textarea id="caption" name="caption" class="form-control" rows="3"><%= @post.caption %></textarea>
-    <!-- Input for caption end -->
   </div>
-  <!-- Label and input for caption end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update post

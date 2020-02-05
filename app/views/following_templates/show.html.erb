@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link following start -->
       <div class="col">
         <a href="/followings/<%= @following.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit following
         </a>
       </div>
-      <!-- Edit link following end -->
 
-      <!-- Delete link following start -->
       <div class="col">
         <a href="/delete_following/<%= @following.id %>" class="btn btn-block btn-outline-secondary">
           Delete following
         </a>
       </div>
-      <!-- Delete link following end -->
     </div>
 
     <dl>
       <dt>
         Recipient
       </dt>
-      <!-- Display recipient_id start -->
       <dd>
         <% if @following.recipient.present? %>
           <a href="/users/<%= @following.recipient_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display recipient_id end -->
 
       <dt>
         Sender
       </dt>
-      <!-- Display sender_id start -->
       <dd>
         <% if @following.sender.present? %>
           <a href="/users/<%= @following.sender_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display sender_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@following.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@following.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

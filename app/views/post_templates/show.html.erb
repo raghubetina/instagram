@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link post start -->
       <div class="col">
         <% if current_user == @post.user %>
           <a href="/posts/<%= @post.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link post end -->
 
-      <!-- Delete link post start -->
       <div class="col">
         <% if current_user == @post.user %>
           <a href="/delete_post/<%= @post.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,32 +26,26 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link post end -->
     </div>
 
     <dl>
       <dt>
         Image
       </dt>
-      <!-- Display image start -->
       <dd>
         <img src="<%= @post.image %>" class="img-fluid">
       </dd>
-      <!-- Display image end -->
 
       <dt>
         Caption
       </dt>
-      <!-- Display caption start -->
       <dd>
         <%= @post.caption %>
       </dd>
-      <!-- Display caption end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @post.user.present? %>
           <a href="/users/<%= @post.user_id %>">
@@ -62,30 +53,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@post.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@post.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "post_templates/post_likes" %>
@@ -97,4 +82,3 @@
     <%= render partial: "post_templates/post_fans" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
