@@ -5,4 +5,6 @@ class Post < ApplicationRecord
 
   # Validations
 
+  validates :image, :presence => true
+
 end
