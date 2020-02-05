@@ -1,6 +1,6 @@
 class FollowingsController < ApplicationController
   def index
-    @followings = Following.all
+    @followings = Following.page(params[:page]).per(10)
 
     render("following_templates/index.html.erb")
   end
