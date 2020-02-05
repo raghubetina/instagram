@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def create_row
     @post = Post.new
 
-    @post.image = params.fetch("image")
+    @post.image = params.fetch("image") if params.key?("image")
     @post.caption = params.fetch("caption")
     @post.user_id = params.fetch("user_id")
 
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   def update_row
     @post = Post.find(params.fetch("id_to_modify"))
 
-    @post.image = params.fetch("image")
+    @post.image = params.fetch("image") if params.key?("image")
     @post.caption = params.fetch("caption")
     @post.user_id = params.fetch("user_id")
 
