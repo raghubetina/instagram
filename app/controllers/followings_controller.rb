@@ -53,6 +53,22 @@ class FollowingsController < ApplicationController
     end
   end
 
+  def destroy_row_from_sender
+    @following = Following.find(params.fetch("id_to_remove"))
+
+    @following.destroy
+
+    redirect_to("/users/#{@following.sender_id}", notice: "Following deleted successfully.")
+  end
+
+  def destroy_row_from_recipient
+    @following = Following.find(params.fetch("id_to_remove"))
+
+    @following.destroy
+
+    redirect_to("/users/#{@following.recipient_id}", notice: "Following deleted successfully.")
+  end
+
   def destroy_row
     @following = Following.find(params.fetch("id_to_remove"))
 

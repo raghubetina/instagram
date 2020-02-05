@@ -55,6 +55,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @post = Post.find(params.fetch("id_to_remove"))
+
+    @post.destroy
+
+    redirect_to("/users/#{@post.user_id}", notice: "Post deleted successfully.")
+  end
+
   def destroy_row
     @post = Post.find(params.fetch("id_to_remove"))
 
