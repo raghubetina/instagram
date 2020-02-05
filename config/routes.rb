@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/likes/new", { :controller => "likes", :action => "new_form" })
   post("/create_like", { :controller => "likes", :action => "create_row" })
+  post("/create_like_from_post", { :controller => "likes", :action => "create_row_from_post" })
 
   # READ
   get("/likes", { :controller => "likes", :action => "index" })
