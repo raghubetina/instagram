@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @like.user_id %>
+        <% if @like.user.present? %>
+          <a href="/users/<%= @like.user_id %>">
+            <%= @like.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display post_id start -->
       <dd>
-        <%= @like.post_id %>
+        <% if @like.post.present? %>
+          <a href="/posts/<%= @like.post_id %>">
+            <%= @like.post.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display post_id end -->
 

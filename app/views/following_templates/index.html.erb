@@ -58,13 +58,21 @@
 
         <!-- Display following.recipient_id start -->
         <td>
-          <%= following.recipient.email %>
+          <% if following.recipient.present? %>
+            <a href="/users/<%= following.recipient.id %>">
+              <%= following.recipient.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display following.recipient_id end -->
 
         <!-- Display following.sender_id start -->
         <td>
-          <%= following.sender.email %>
+          <% if following.sender.present? %>
+            <a href="/users/<%= following.sender.id %>">
+              <%= following.sender.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display following.sender_id end -->
 
