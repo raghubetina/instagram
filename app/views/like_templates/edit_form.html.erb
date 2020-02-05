@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for post_id start -->
-    <input type="text" id="post_id" name="post_id" class="form-control" value="<%= @like.post_id %>">
+    <%= select_tag(:post_id, options_from_collection_for_select(Post.all, :id, :created_at, @like.post_id), :class => "form-control") %>
     <!-- Input for post_id end -->
   </div>
   <!-- Label and input for post_id end -->
